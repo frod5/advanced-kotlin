@@ -1,7 +1,8 @@
 package generic
 
 fun main() {
-
+  val cage = Cage5<Bird>(mutableListOf(Eagle(), Sparrow()))
+  cage.printAfterSorting()
 }
 
 abstract class Bird(
@@ -19,7 +20,7 @@ class Eagle : Bird("독수리", 500)
 
 class Cage5<T>(
   private val animals: MutableList<T> = mutableListOf(),
-) where T : Animal, T : Comparable<T> {
+) where T : Animal, T : Comparable<T> { // 제네릭 제약조건 -> Animal을 하위, Comparable 구현 타입
 
   fun printAfterSorting() {
     this.animals.sorted()

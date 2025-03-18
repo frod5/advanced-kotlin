@@ -1,11 +1,9 @@
 package generic
 
 fun main() {
-  val goldFishCage = Cage2<GoldFish>()
-  goldFishCage.put(GoldFish("금붕어"))
-
-  val fishCage = Cage2<Fish>()
-  // fishCage.moveFrom(goldFishCage) // Type mismatch
+  val cage: Cage = Cage()
+  cage.put(Carp("잉어"))
+  val carp: Carp = cage.getFirst() as? Carp?: throw IllegalArgumentException() // 여전히 다른 타입을 넣으면 예외발생
 }
 
 class Cage {
