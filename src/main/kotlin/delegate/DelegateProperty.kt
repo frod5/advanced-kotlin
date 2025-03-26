@@ -12,6 +12,7 @@ class Person3 {
     "김수한무"
   }
 
+  //ReadOnlyProperty 익명 클래스로 구현.
   val status: String by object : ReadOnlyProperty<Person3, String> {
     private var isGreen: Boolean = false
     override fun getValue(thisRef: Person3, property: KProperty<*>): String {
@@ -36,6 +37,7 @@ class LazyInitProperty<T>(val init: () -> T): ReadOnlyProperty<Any, T> {
       return _value!!
     }
 
+  //ReadOnlyProperty의 getValue 구현
   override fun getValue(thisRef: Any, property: KProperty<*>): T {
     return value
   }
@@ -57,6 +59,7 @@ class Person5 {
   val country by DelegateProvider("한국")
 }
 
+//위임객체를 제공하는 인터페이스 사용
 class DelegateProvider(
   private val initValue: String
 ) : PropertyDelegateProvider<Any, DelegateProperty> {
@@ -109,6 +112,8 @@ class GreenApple2 : Apple() {
     get() = "초록색"
 }
 
+
+//위임 클래스
 class GreenApple3(
   private val apple: Apple
 ) : Fruit by apple {
