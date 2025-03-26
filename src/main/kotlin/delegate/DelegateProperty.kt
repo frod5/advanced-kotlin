@@ -42,6 +42,7 @@ class LazyInitProperty<T>(val init: () -> T): ReadOnlyProperty<Any, T> {
 }
 
 class Person4 {
+  // 값이 변경할떄 onChange를 호출해준다.
   var age: Int by Delegates.observable(20) { _, oldValue, newValue ->
     println("이전 값 : ${oldValue} 새로운 값 : ${newValue}")
   }
