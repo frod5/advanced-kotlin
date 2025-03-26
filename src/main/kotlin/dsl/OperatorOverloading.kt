@@ -9,6 +9,9 @@ data class Point(
   val x: Int,
   val y: Int,
 ) {
+
+  //연산자 오버로딩
+  //메소드명은 공식문서 참조
   operator fun unaryMinus(): Point {
     return Point(-x, -y)
   }
