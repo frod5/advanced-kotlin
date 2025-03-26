@@ -5,6 +5,7 @@ import kotlin.properties.PropertyDelegateProvider
 import kotlin.properties.ReadOnlyProperty
 import kotlin.reflect.KProperty
 
+//by -> 위임객체에 getValue, setValue가 있어야 한다.
 class Person3 {
   val name: String by LazyInitProperty {
     Thread.sleep(2_000)
