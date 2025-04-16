@@ -6,6 +6,7 @@ import kotlin.reflect.KFunction
 import kotlin.reflect.KParameter
 import kotlin.reflect.cast
 
+// Dependency Injection 예제 실습
 class DI
 
 object ContainerV1 {
