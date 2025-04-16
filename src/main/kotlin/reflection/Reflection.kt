@@ -54,5 +54,8 @@ fun main() {
   kClass.java // Class<Reflection>
   kClass.java.kotlin // KClass<Reflection>
 
+  //KClass -> reflect 클래스
+  //java -> Clazz
+
 }
 
