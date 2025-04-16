@@ -135,5 +135,6 @@ fun String.addIndent(indent: String, times: Int = 0): String {
     .joinToString("\n") { "$allIndent$it" }
 }
 
+// 가장 가까운 수신객체에 대해서만 this를 생략할 수 있다!
 @DslMarker
 annotation class YamlDsl
