@@ -5,6 +5,8 @@ import kotlin.reflect.KClass
 class Lec25 {
 }
 
+// 꼬리 재귀 함수
+// 함수 콜스택을 사용하지 않고 loop로 최적화 한다.
 tailrec fun factorialV2(n: Int, curr: Int = 1): Int {
   return if (n <= 1) {
     curr
@@ -13,7 +15,7 @@ tailrec fun factorialV2(n: Int, curr: Int = 1): Int {
   }
 }
 
-
+// 인라인 클래스
 @JvmInline
 value class Key(val key: String)
 
@@ -35,9 +37,13 @@ fun handleV2(userId: Id<User>, bookId: Id<Book>) {
 
 }
 
+// 인라인 클래스의 활용 1
+// 같은 타입의 식별자를 다수 사용할 때
 @JvmInline
 value class Id<T>(val id: Long)
 
+// 인라인 클래스의 활용 2
+// 값 객체
 @JvmInline
 value class Number(val num: Long) {
   init {
