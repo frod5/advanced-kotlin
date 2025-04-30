@@ -4,6 +4,7 @@ class Lec26 {
 }
 
 // kdoc <Block Tag>
+// @param, @property, @sample
 /**
  * 박스를 나타내는 클래스.
  *
